@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="naturepeak0.springbootdeveloper.controller.TokenApiControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-22T15:34:51" hostname="DESKTOP-E4JGI00" time="0.939">
+  <properties/>
+  <testcase name="createNewAccessToken: 새로운 액세스 토큰을 발급한다." classname="naturepeak0.springbootdeveloper.controller.TokenApiControllerTest" time="0.939"/>
+  <system-out><![CDATA[00:34:47.803 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [naturepeak0.springbootdeveloper.controller.TokenApiControllerTest]: TokenApiControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:34:47.914 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration naturepeak0.springbootdeveloper.SpringBootDeveloperApplication for test class naturepeak0.springbootdeveloper.controller.TokenApiControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2024-12-23T00:34:48.277+09:00  INFO 10792 --- [    Test worker] n.s.controller.TokenApiControllerTest    : Starting TokenApiControllerTest using Java 17.0.13 with PID 10792 (started by inandexhale95 in C:\Users\inandexhale95\Documents\Spring\springboot3-basic\springboot-jwt-basic)
+2024-12-23T00:34:48.278+09:00  INFO 10792 --- [    Test worker] n.s.controller.TokenApiControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2024-12-23T00:34:48.842+09:00  INFO 10792 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-23T00:34:48.896+09:00  INFO 10792 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 3 JPA repository interfaces.
+2024-12-23T00:34:49.286+09:00  INFO 10792 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-23T00:34:49.333+09:00  INFO 10792 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2024-12-23T00:34:49.359+09:00  INFO 10792 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-23T00:34:49.587+09:00  INFO 10792 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-23T00:34:49.617+09:00  INFO 10792 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-23T00:34:49.827+09:00  INFO 10792 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4213bc3e
+2024-12-23T00:34:49.829+09:00  INFO 10792 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-23T00:34:50.586+09:00  INFO 10792 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-23T00:34:50.618+09:00  INFO 10792 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-23T00:34:51.051+09:00  WARN 10792 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-23T00:34:51.389+09:00  INFO 10792 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3599b7e8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2862bac6, org.springframework.security.web.context.SecurityContextHolderFilter@235b4aea, org.springframework.security.web.header.HeaderWriterFilter@6ccfce5a, org.springframework.web.filter.CorsFilter@52e5ad71, org.springframework.security.web.authentication.logout.LogoutFilter@eea69a9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4795876e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64e680c5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1dcf5f38, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@696a6506, org.springframework.security.web.access.ExceptionTranslationFilter@2bc52b08, org.springframework.security.web.access.intercept.AuthorizationFilter@665e18d5]
+2024-12-23T00:34:51.393+09:00  WARN 10792 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/static/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-12-23T00:34:51.393+09:00  INFO 10792 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/static/**']
+2024-12-23T00:34:51.753+09:00  INFO 10792 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-23T00:34:51.754+09:00  INFO 10792 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-23T00:34:51.755+09:00  INFO 10792 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-12-23T00:34:51.776+09:00  INFO 10792 --- [    Test worker] n.s.controller.TokenApiControllerTest    : Started TokenApiControllerTest in 3.734 seconds (process running for 4.717)
+2024-12-23T00:34:52.260+09:00  INFO 10792 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-23T00:34:52.260+09:00  INFO 10792 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-23T00:34:52.261+09:00  INFO 10792 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        users
+        (created_at, email, password, updated_at) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        refresh_token
+        (refresh_token, user_id) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        rt1_0.id,
+        rt1_0.refresh_token,
+        rt1_0.user_id 
+    from
+        refresh_token rt1_0 
+    where
+        rt1_0.refresh_token=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
